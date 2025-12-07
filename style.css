@@ -19,7 +19,6 @@ header {
   margin-right: 2.5px;
 }
 .logo {
-  color: var(--white);
   margin: 0;
   font-size: 16px;
 }
@@ -51,6 +50,9 @@ header {
 .main-container {
   max-width: 1024px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 112px;
 }
 .hero {
   display: flex;
@@ -63,14 +65,12 @@ header {
   flex: 1;
 }
 .hero-content h2 {
-  color: var(--white);
   font-size: 32px;
 }
 .hero-content span {
   color: var(--primary);
 }
 .hero-content p {
-  color: var(--gray);
   margin-bottom: 24px;
 }
 .contact-btn {
@@ -106,7 +106,6 @@ header {
   background-color: var(--primary);
 }
 .portfolio-note {
-  color: var(--gray);
   font-size: 16px;
   display: flex;
   margin: 0;
@@ -114,4 +113,141 @@ header {
 .portfolio-note span {
   color: var(--white);
   font-weight: bold;
+}
+
+.quote {
+  text-align: center;
+  border: 1px solid var(--gray);
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote blockquote {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 500px;
+  padding: 32px;
+  margin: 0;
+}
+.quote blockquote::before,
+.quote blockquote::after {
+  content: '"';
+  position: absolute;
+  color: var(--gray);
+  font-style: italic;
+  font-size: 56px;
+  background-image: linear-gradient(45deg, var(--background));
+  background-size: 100% 45%;
+  background-repeat: no-repeat;
+}
+.quote blockquote::before {
+  top: -20px;
+  left: 20px;
+}
+.quote blockquote::after {
+  top: 75px;
+  right: 20px;
+}
+.quote figcaption {
+  position: absolute;
+  color: var(--gray);
+  font-size: 24px;
+  padding: 16px;
+  border: 1px solid var(--gray);
+  right: -1px;
+  border-top: none;
+}
+
+.social-links {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 17px;
+  top: 0;
+  gap: 8px;
+}
+
+.social-links-line {
+  width: 1px;
+  height: 191px;
+  background-color: var(--gray);
+}
+
+.social-links ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* project section */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.projects-header h2 {
+  position: relative;
+}
+.projects-header h2::before {
+  content: "#";
+  color: var(--primary);
+}
+.projects-header h2::after {
+  content: "";
+  background-color: var(--primary);
+  width: 500px;
+  height: 1px;
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+.projects-header a {
+  color: white;
+  text-decoration: underline;
+}
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.project-card,
+.project-card img {
+  border: 1px solid var(--gray);
+}
+.project-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--gray);
+  border-bottom: 1px solid var(--gray);
+  margin: 0;
+  padding: 8px;
+}
+
+.project-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-info h3 {
+  font-size: 24px;
+  margin: 0;
+}
+.project-info p {
+  margin: 0;
 }
